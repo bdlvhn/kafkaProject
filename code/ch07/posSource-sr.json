@@ -1,0 +1,15 @@
+'
+{
+	"name" : "load-possales-data-sr",
+	"config" : {
+		"connector.class" : "io.confluent.connect.jdbc.JdbcSourceConnector",
+		"connection.url" : "jdbc:mysql://pos-data-server/pos",
+		"connection.user" : "connectuser",
+		"connection.password" : "connectpass",
+		"mode" : "incrementing",
+		"incrementing.column.name" : "seq",
+		"table.whitelist" : "pos_uriage",
+		"topic.prefix" : "possales_sr_",
+		"tasks.max" : "3"
+	}
+} ' | curl -X POST -d @- http://kafka-broker01:8083/connectors --header "content-Type:application/json"

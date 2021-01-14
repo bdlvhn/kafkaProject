@@ -1,0 +1,14 @@
+{
+	"name" : "load-ecsales-data",
+	"config" : {
+		"connector.class" : "io.confluent.connect.jdbc.JdbcSourceConnector",
+		"connection.url" : "jdbc:postgresql://ec-data-server/ec",
+		"connection.user" : "connectuser",
+		"connection.password" : "connectpass",
+		"mode" : "incrementing",
+		"incrementing.column.name" : "seq",
+		"table.whitelist" : "ec_uriage",
+		"topic.prefix" : "ecsales_",
+		"tasks.max" : "3"
+	}
+}

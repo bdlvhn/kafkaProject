@@ -1,0 +1,14 @@
+'
+{
+	"name" : "sink-sales-data-sr",
+	"config" : {
+		"connector.class" : "io.confluent.connect.s3.S3SinkConnector",
+		"s3.bucket.name" : "hoon-datahub-sales",
+		"s3.region" : "ap-northeast-2",
+		"storage.class" : "io.confluent.connect.s3.storage.S3Storage",
+		"format.class" : "io.confluent.connect.s3.format.json.JsonFormat",
+		"flush.size" : 3,
+		"topics" : "possales_sr_pos_uriage",
+		"tasks.max" : "3"
+	}
+} ' | curl -X POST -d @- http://kafka-broker01:8083/connectors --header "content-Type:application/json"

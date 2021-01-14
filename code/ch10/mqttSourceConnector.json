@@ -1,0 +1,13 @@
+echo '
+{
+	"name" : "MqttSourceConnector",
+	"config" : {
+		"name" : "MqttSourceConnector",
+		"connector.class" : "io.confluent.connect.mqtt.MqttSourceConnector",
+		"tasks.max" : "1",
+		"mqtt.server.uri" : "tcp://mosquitto-broker:1883",
+		"mqtt.topics" : "mqtt",
+		"kafka.topic" : "mqtt-source"
+	}
+}
+' | curl -X POST -d @- http://localhost:8083/connectors --header "content-Type:application/json"

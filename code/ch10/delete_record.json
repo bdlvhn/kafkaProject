@@ -1,0 +1,18 @@
+{
+	"partitions" : [
+		{
+			"topic" : "mqtt-source",
+			"partition" : 0,
+			"offset" : -1
+		}, {
+			"topic" : "mqtt-source",
+			"partition" : 1,
+			"offset" : -1
+		}, {
+			"topic" : "mqtt-source",
+			"partition" : 2,
+			"offset" : -1
+		}
+	],
+	"version" : 1
+}
